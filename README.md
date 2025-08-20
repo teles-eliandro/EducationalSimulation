@@ -1,8 +1,11 @@
 
 
 🛡️ Simulation pédagogique – Prévention des arnaques numériques
+
 🛡️ Educational Simulation – Scam & Phishing Awareness
+
 🇫🇷 Version française
+
 🎯 Objectif
 Ce projet est une page web éducative destinée à sensibiliser les jeunes (14-17 ans, mais utilisable plus largement) aux dangers des arnaques numériques : phishing, liens piégés, sites frauduleux.
 
