@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerte de Sécurité</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: limegreen;
+      font-family: monospace;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    #hacking {
+      width: 90%;
+      height: 100%;
+      padding: 20px;
+      white-space: pre-line;
+      overflow-y: auto;
+    }
+
+    .warning {
+      font-size: 2em;
+      color: red;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0% { color: red; }
+      50% { color: yellow; }
+      100% { color: red; }
+    }
+
+    #educatif {
+      display: none;
+      background: white;
+      color: black;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+    }
+
+    button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    ul {
+      text-align: left;
+      margin: 20px auto;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="hacking">
+    <div class="warning">⚠ INTRUSION DÉTECTÉE ⚠</div>
+    <p id="consoleText"></p>
+  </div>
+
+  <div id="educatif">
+    <h1 style="color:red;">‼ Simulation pédagogique ‼</h1>
+    <p><b>Pas de panique</b> : aucune donnée n’a été volée.<br>
+    Cette page est une simulation pour te montrer ce qui <u>aurait pu arriver</u> si c’était un vrai piratage.</p>
+    <h3>👉 Les 3 réflexes à retenir :</h3>
+    <ul>
+      <li>Ne clique jamais sur un lien d'une source inconnue</li>
+      <li>Vérifie toujours l’expéditeur (adresse mail, numéro...)</li>
+      <li>En cas de doute → parles-en à un adulte de confiance</li>
+    </ul>
+    <button onclick="location.reload()">Rejouer la simulation</button>
+  </div>
+
+  <script>
+    // Messages "flippants" qui apparaissent avec effet console
+    const fakeLogs = [
+      "Analyse du système en cours...",
+      "Connexion au serveur distant...",
+      "Résolution de l’adresse IP...",
+      "IP détectée : 192.168.0." + Math.floor(Math.random() * 255),
+      "Extraction des données personnelles...",
+      "Téléchargement en cours [■■■■■■        ] 55%",
+      "Accès au compte réseau...",
+      "Mot de passe trouvé : *****",
+      "Envoi des informations...",
+      ">>> SÉCURITÉ COMPROMISE <<<"
+    ];
+
+    let index = 0;
+    const consoleText = document.getElementById("consoleText");
+
+    function showNextLine() {
+      if(index < fakeLogs.length) {
+        consoleText.innerHTML += fakeLogs[index] + "\n";
+        index++;
+        setTimeout(showNextLine, 1200);
+      } else {
+        setTimeout(() => {
+          // On bascule vers l’explication éducative
+          document.getElementById("hacking").style.display = "none";
+          document.getElementById("educatif").style.display = "block";
+        }, 2500);
+      }
+    }
+
+    showNextLine();
+  </script>
+</body>
+</html>
