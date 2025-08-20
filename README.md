@@ -51,7 +51,9 @@ Avant l’expérience → ne rien dire.
 Après → lancer le débat : « Pourquoi avez-vous cliqué ? Comment éviter la prochaine fois ? »
 
 🇬🇧 English Version
+
 🎯 Goal
+
 This project is an educational web page designed to raise awareness among teenagers (14-17 years old, but wider use possible) about the dangers of online scams: phishing, fake links, fraudulent websites.
 
 A fake hacking simulation is displayed (console-style alerts, warning messages).
